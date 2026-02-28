@@ -1,0 +1,1 @@
+void AddSC_archipelago_commandscript();
