@@ -37,9 +37,6 @@ class ArchipelagoMailer : public WorldScript
         const std::string PROG_WEAP = "Progressive Weapon";
         const std::string PORT_HOLE = "Portable Hole";
         const std::string GOLD = "1000 Gold";
-        const std::string STARTER_ITEMS = "Starter Items";
-        const std::string STARTER_LEVELS = "Starter Levels";
-        const std::string SYNC = "Sync";
 
         const std::map<uint8,std::vector<uint32>> PROG_ARMOR_MAP = {
             //   head   neck   shldr  cape   chest  wrist  hand   waist   leg   boot   ring1  trinket1  

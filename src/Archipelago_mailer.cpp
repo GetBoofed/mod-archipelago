@@ -37,6 +37,8 @@ void ArchipelagoMailer::OnStartup()
 
 void ArchipelagoMailer::OnUpdate(uint32 diff)
 {
+    if (!enabled) { return; }
+
     update_time += diff;
     if (update_time < 5000) { return; }
     if (!unsent_messages.empty()) { handleMessage(&unsent_messages, true); }
@@ -51,6 +53,8 @@ void ArchipelagoMailer::OnUpdate(uint32 diff)
 
 void ArchipelagoMailer::OnShutdown()
 {
+    if (!enabled) { return; }
+    
     io_context.stop();
     server_thread->join();
 }
@@ -80,8 +84,6 @@ void ArchipelagoMailer::handleMessage(std::vector<std::string>* message_queue, b
             weap_sent += 1;
         } else if (message == PORT_HOLE) {
             sent = sendMail(0, PORT_HOLE_VEC);
-        } else if (message == STARTER_LEVELS) {
-            sent = tryGrantLevels(9);
         }
 
         if (sent) 
@@ -139,13 +141,11 @@ bool ArchipelagoMailer::sendMail(const uint32 money, const std::vector<uint32>& 
         }
     }
 
-    MailReceiver mailRec = nullptr;
+    MailReceiver mailRec(player_guid.GetCounter());
 
     if (Player* player = ObjectAccessor::FindConnectedPlayer(player_guid))
     {
-        MailReceiver mailRec(player);
-    } else {
-        MailReceiver mailRec(player_guid.GetCounter());
+        mailRec = MailReceiver(player);
     }
 
     MailSender mailSend(MailMessageType::MAIL_CREATURE, 34337);

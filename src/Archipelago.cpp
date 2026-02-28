@@ -50,11 +50,12 @@ void Archipelago::sendHandshake(Player* player)
 void Archipelago::tryResync(Player* player)
 {
     std::ifstream saveFile("ArchipelagoSave.txt");
-    std::string line;
-    std::vector<std::string> lines = {};
 
     if (saveFile.is_open())
     {
+        std::string line = "";
+        std::vector<std::string> lines = {};
+
         while (getline(saveFile,line))
         {
             lines.push_back(line);
@@ -70,9 +71,9 @@ void Archipelago::tryResync(Player* player)
     }
 
     if (player->GetLevel() == 1)
-        {
-            ArchipelagoMailer::GetInstance()->sendStarters();
-        }
+    {
+        ArchipelagoMailer::GetInstance()->sendStarters();
+    }
 }
 
 void Archipelago::sendCheck(int ach_id)
