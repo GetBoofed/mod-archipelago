@@ -1,7 +1,7 @@
 # Archipelago Module
 `mod-archipelago` is an [AzerothCore](https://www.azerothcore.org/) module that allows for participation in Archipelago Multiworld Randomizer games.
 
-The Archipelago AP world cna be found [here](https://github.com/GetBoofed/Archipelago).
+The Archipelago AP world can be found [here](https://github.com/GetBoofed/Archipelago).
 
 Your task is to run dungeons for locations checks. Completing any dungeon and gaining the achievement for it is considered the check location, so this will require a new character.
 
