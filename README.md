@@ -23,7 +23,7 @@ Completion Goal:
 - Optionally, Heroic Halls of Reflection. Heroic Victory can be set in your Archipelago player options, and will add all northrend heroic dungeons to the location check pool.
 
 ## Important
-As of initial release, this module assumes you will be playing a warrior tank. The armor and weapons provided are chosen for them specifically. I will add more options later, or if you wish to contribute, please feel free.
+Not all classes are available currently. Check mail_items.json in the data folder to see which class/spec combo has items filled in. I will add more options later, or if you wish to contribute, please feel free.
 
 You must start an new character at level 1. When you have your Archipelago client runnning and connected to the lobby your playing in, you MUST activate this module. This can be done by typing in the command .archipelago start (or .arch start). This will give the tell the game who the Archipelago rewards go to, level you up to 10 and mail you some starting gear.
 

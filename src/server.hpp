@@ -65,7 +65,7 @@ void inline session::wait_for_request() {
             server::GetInstance()->message_queue->push_back(message);
 
         } else {
-            std::cout << "error: " << ec << std::endl;;
+            LOG_ERROR("module", "Archipelago - Error in server reading: {}", ec.message());
         }
     });
 }
@@ -76,7 +76,7 @@ void inline server::do_accept()
                 if (!ec) {
                     std::make_shared<session>(std::move(socket))->run();
                 } else {
-                    std::cout << "error: " << ec.message() << std::endl;
+                    LOG_ERROR("module", "Archipelago - Error in server accepting: {}", ec.message());
                 }
                 do_accept();
             });

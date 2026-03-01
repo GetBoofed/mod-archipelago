@@ -6,8 +6,6 @@
 #include "Archipelago.h"
 #include "Archipelago_command.h"
 #include "Archipelago_mailer.h"
-#include <boost/asio.hpp>
-#include <boost/asio/steady_timer.hpp>
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -37,6 +35,9 @@ void Archipelago::sendHandshake(Player* player)
 {
     if (player)
     {
+        bool hasItems = ArchipelagoMailer::GetInstance()->loadJsonData();
+        if (!hasItems) { return; }
+
         m_player_guid = player->GetGUID();
         std::string guid = std::to_string(m_player_guid.GetCounter());
         std::string message = "HANDSHAKE:" + guid;

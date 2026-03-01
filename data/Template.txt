@@ -1,0 +1,24 @@
+Template for item maps.
+
+"CLASS NAME": {
+    "armor": {
+        "SPEC NAME": {
+            "O" - This is armor for level 10
+            "1" - Level 20
+            ...
+            "7" - Level 80
+        }
+    },
+    "weapons": {
+        "SPEC NAME": {
+            "0" - Same as armor, level 10
+            ...
+            "7" - Level 80
+        }
+    }
+}
+
+Armor and weapons must be an array of item numbers. The order is not strict, but it makes it easier to keep track of. Here's a template.
+
+ARMOR   -   "GEAR_LEVEL_MINUS_10": [ HELM, NECKLACE, SHOULDERS, CAPE, CHEST, WRIST, HANDS, LEGS, BOOTS, RING1, TRINKET1 ]
+WEAPON   -  "GEAR_LEVEL_MINUS_10": [ MAIN_HAND, OFFHAND, RING2, TRINKET2, RANGED_OR_RELIC ]
