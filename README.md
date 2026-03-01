@@ -23,11 +23,13 @@ Completion Goal:
 - Optionally, Heroic Halls of Reflection. Heroic Victory can be set in your Archipelago player options, and will add all northrend heroic dungeons to the location check pool.
 
 ## Important
-Not all classes are available currently. Check mail_items.json in the data folder to see which class/spec combo has items filled in. I will add more options later, or if you wish to contribute, please feel free.
+Not all classes are available currently. Check [here](https://github.com/GetBoofed/mod-archipelago/blob/master/data/mail_items.json) to see which class/spec combo has items filled in. I will add more options later, or if you wish to contribute, please feel free.
 
 You must start an new character at level 1. When you have your Archipelago client runnning and connected to the lobby your playing in, you MUST activate this module. This can be done by typing in the command .archipelago start (or .arch start). This will give the tell the game who the Archipelago rewards go to, level you up to 10 and mail you some starting gear.
 
 I recommend using bots added via the `.playerbots bot addclass CLASSNAME` command, as they can re-rolled via the `.playerbots bot init=rare` command when you level up.
+
+If you get the `entered too many instances recently` message, this can be configured in the Azerothcore `worldserver.conf` file at the line `AccountInstancesPerHour = 5`. Change the number then use the command `.reload config` to apply. No need to restart the server.
 
 ## Installation
 Follow the installation guide for the [Playerbots Module](https://github.com/mod-playerbots/mod-playerbots).
